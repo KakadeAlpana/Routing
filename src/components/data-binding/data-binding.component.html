@@ -1,3 +1,66 @@
-<p>data-binding works!</p>
+<button class="btn btn-success pt-2" (click)="gotoAdminPanal()">Goto Admin</button>
+<div class="container">
+    <div class="row mt-2">
+        <div class="col-4">
+            <h4> String interpolation</h4>
+        </div>
+         <div class="col-4">
+            <h4>Property Binding </h4>
+        </div>
+         <div class="col-4">
+            <h4> Event Binding</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <p>{{newData}}</p>
+            <p> {{totalCount}}</p>
+            <p> {{isPresent}}</p>
+             <input type="text" value={{newData}} >
+            <input type={{inputType}}  placeholder="enter text">
 
-<button class="btn btn-success" (click)="gotoAdminPanal()">Goto Admin</button>
+        </div>
+         <div class="col-4">
+           <p [class]="studentData">bg will change using Property binding</p>
+           <input type="text" [value]="newData" >
+        </div>
+         <div class="col-4">
+            <button class="btn btn-primary m-3" (click)=showMessage()>click Me</button>
+            <button class="btn btn-success " (click)=changeVariblename()>change Name</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <h4>Two Way data binding</h4>
+
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-12">
+            <input type="text" [(ngModel)]="newData" />
+            <br>
+            <select [(ngModel)]="cityName">
+                <option value=""> select</option>
+                <option value="Goa"> Goa</option>
+                <option value="Pune"> Pune</option>
+                <option value="Jaipur"> Jaipur</option>
+            </select>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <h4>Signal data binding</h4>
+
+
+        </div>
+    </div>
+     <div class="row">
+        <div class="col-12">
+           <p>{{personalName()}}</p>
+        </div>
+    </div>
+</div>
+
