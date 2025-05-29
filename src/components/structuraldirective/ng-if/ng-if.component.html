@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-3">
+        <div class="box" *ngIf="isdiv1visible"> div1 </div>
+        
+    </div>
+     <div class="col-3">
+        <div class="box" *ngIf="isboxToggle" > div2 </div>
+        
+    </div>
+     <div class="col-3">
+        <div class="box" *ngIf="isdata1 == isdata2" > div3</div>
+        
+    </div>
+    <div class="col-3">
+        <div class="box" *ngIf="ischeckbox || isSelectValue=='df'"> div4</div>
+    </div>
+
+</div>
+<div class="row">
+     <div class="col-3">
+        <div class="mt-4">
+            <div class="btn btn-success m-2" (click)="hideDiv()"> hide</div>
+            <div class="btn btn-danger" (click)="showdiv()"> show</div>
+        </div>
+    </div>
+    <div class="col-3">
+       <div class="mt-4">
+            <div class="btn btn-success m-2" (click)="toggleDiv()"> Toggle</div>
+        </div>
+    </div>
+    <div class="col-3">
+       <div class="mt-4">
+        <input type="text" [(ngModel)]="isdata1">
+        <input type="text" [(ngModel)]="isdata2">
+     </div>
+    </div>
+     <div class="col-3">
+       <div class="mt-4">
+        <input type="checkbox"  [(ngModel)]=ischeckbox>
+        <select  [(ngModel)]="isSelectValue">
+            <option value=""></option>
+            <option value="abc">abc</option>
+            <option value="bn">bn</option>
+            <option value="df">df</option>
+        </select>
+     </div>
+    </div>
+</div>

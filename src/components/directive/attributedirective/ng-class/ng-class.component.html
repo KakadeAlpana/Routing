@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-3">
+        <div class="circleAround" [ngClass]="circleColordiv1"></div>
+    </div>
+    <div class="col-3">
+        <div class="circleAround" [ngClass]="iscircleColordiv2==true ? 'bg-primary' :'bg-warning'"></div>
+    </div>
+    <div class="col-3">
+        <div class="circleAround" [ngClass]="num1 == num2 ? 'bg-warning' : 'bg-primary'"></div>
+    </div>
+    <div class="col-3">
+        <div class="circleAround" [ngClass]="isCheckbockActive ? 'bg-warning' : '' "></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="btn btn-danger m-1" (click)="addRedColor()">Add red</div>
+        <div class="btn btn-success"  (click)="addGreenColor()">Add green</div>
+    </div>
+    <div class="col-3">
+         <div class="btn btn-danger m-1" (click)="toggleColor()">Add red</div>
+
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]='num1' placeholder="num-1" class="width-50"/>
+        <input type="text" [(ngModel)]='num2' placeholder="num-1" class="width-50"/>
+    </div>
+    <div class="col-3">
+        <input type="checkbox" [(ngModel)]="isCheckbockActive"/>
+
+        
+    </div>
+</div>

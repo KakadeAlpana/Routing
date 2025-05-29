@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-6">
+        <h3>Table Records</h3>
+        <table class="table table-bordered">
+            <thead>
+               <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Status</th>
+                <th>Markes</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stddata of studentArray" >
+                    <td>{{stddata.name}}</td>
+                    <td>{{stddata.city}}</td>
+                    <td [ngStyle]="{'background-color' :stddata.isActive ? 'yellow' : 'red'}">
+                        <span>{{stddata.isActive ? 'Active': 'Deactive'}}</span>
+                        </td>
+                    
+                    <td>
+                        <div class="progress">
+                            <div class="progress-bar" [ngStyle]="{'width':stddata.markes + '%'}">{{stddata.markes}}</div>
+                        </div>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

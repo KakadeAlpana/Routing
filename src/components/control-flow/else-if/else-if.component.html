@@ -1,0 +1,69 @@
+<div class="row">
+
+    <div class="col-3">
+        @if (isBoxvisible) {
+        <div class="box"> div1 </div>
+        }
+    </div>
+    <div class="col-3">
+        @if(isdiv2togglevisible){
+
+        <div class="box btn-danger" > div2 </div>
+        } @else {
+
+        <div class="box bg-warning"> div2 </div>
+        }
+
+    </div>
+     <div class="col-3">
+        @if(isdata1 == isdata2){
+        <div class="box "> div3</div>
+        }
+        
+    </div>
+    <div class="col-3">
+        <div class="box bg-warning">
+        @if (isSelectStatus == 'Active'){
+        <p>Status is Active</p>
+        } @else if (isSelectStatus == 'DeActive') {
+
+            <p>Status is DeActive</p>
+        }@else if (isSelectStatus) {
+
+            <p>Status is Pending</p>
+        }@else {
+            <p>please select value</p>
+        }
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-3">
+        <div class="mt-4">
+            <div class="btn btn-success m-2" (click)="hideDiv()"> hide</div>
+            <div class="btn btn-danger" (click)="showdiv()"> show</div>
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="mt-4">
+            <div class="btn btn-success m-2" (click)="toggleDiv()"> Toggle</div>
+        </div>
+    </div>
+    <div class="col-3">
+       <div class="mt-4">
+        <input type="text" [(ngModel)]="isdata1">
+        <input type="text" [(ngModel)]="isdata2">
+     </div>
+    </div>
+     <div class="col-3">
+       <div class="mt-4">
+        <select  [(ngModel)]="isSelectStatus">
+            <option value="">please select</option>
+            <option value="Active">Active</option>
+            <option value="DeActive">DeActive</option>
+            <option value="Pending">Pending</option>
+        </select>
+     </div>
+    </div> 
+</div>

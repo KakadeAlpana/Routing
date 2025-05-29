@@ -1,0 +1,54 @@
+<div class="row">
+    <div class="col-3">
+       <h4>For UI list Array</h4>
+    </div>
+    <div class="col-3">
+        <h4>For select option</h4>
+    </div>
+    <div class="col-3">
+        <h4>Select list with object</h4>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+         <ul>
+            <li *ngFor="let city of cityArray">{{city}}</li>
+        </ul>
+    </div>
+     <div class="col-3">
+        <select>
+            <option *ngFor="let cityname of cityArray">{{cityname}}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select>
+            <option *ngFor="let std of studentArray" [value]="std.id">{{std.name}}</option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <h3>Table records</h3>
+        <table class="table table-bordered">
+            <thead>
+               <tr>
+                <th>StudentId</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Status</th>
+               </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let stddata of studentArray" >
+                    <td>{{stddata.sid}}</td>
+                    <td>{{stddata.name}}</td>
+                    <td>{{stddata.city}}</td>
+                    <td>
+                        <span *ngIf="stddata.isActive">Active</span>
+                        <span *ngIf="!stddata.isActive">De-Active</span>
+                        </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

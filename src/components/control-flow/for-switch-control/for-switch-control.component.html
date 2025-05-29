@@ -1,0 +1,79 @@
+
+<div class="row">
+    <div class="col-6">
+        <ul>
+            @for (item of cityArray; track $index) {
+                <li>{{item}}</li>
+            }
+        </ul>
+    </div>
+
+    <div class="col-6">
+        <h3>Table records</h3>
+        <table class="table table-bordered">
+            <thead>
+               <tr>
+                   
+                   <th>Sr No.</th>
+                   <th>Name</th>
+                <th>City</th>
+                <th>Status</th>
+               </tr>
+            </thead>
+            <tbody>
+                    @for (stddata of studentArray; track $index) {
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{stddata.name}}</td>
+                    <td>{{stddata.city}}</td>
+                    <td>
+                        @if(stddata.isActive){
+
+                            <span class="bg-warning">Active</span>
+                        } @else {
+
+                            <span class="bg-success">De-Active</span>
+                        }
+                        </td>
+                </tr>
+                    }
+                   
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <h4>switch case</h4>
+
+        <input type="text" [(ngModel)]="weekDays"/>
+
+        <p>Her you can see week Days :
+
+        @switch (weekDays) {
+            @case ('1') {
+                <span>Monday</span>
+            }
+            @case ('2') {
+                <span>Tuesday</span>
+            }
+            @case ('3') {
+                <span>Wednsday</span>
+            }
+            @case ('4') {
+                <span>Thurday</span>
+            }
+            @case ('5') {
+                <span>Friday</span>
+            }
+            @case ('6') {
+                <span>Saturday</span>
+            }
+            @case ('7') {
+                <span>Sunday</span>
+            }
+        }
+         </p>
+
+    </div>
+</div>
