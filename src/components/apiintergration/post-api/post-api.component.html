@@ -1,0 +1,48 @@
+<div class="container py-4">
+
+    <div class="row">
+
+        <div class="col-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Sr. no</th>
+                        <th>Depart Name</th>
+                        <th>Depart Img</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of deptData; track $index) {
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.deptName}}</td>
+                        <td>{{item.deptLogo}}</td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        {{index | json}}
+
+        <div class="col-4">
+
+            <form class="row g-3 formstyle">
+                <h4 class="text-center">Login From</h4>
+
+                <div class="col-12">
+                    <label class="form-label">Department Name</label>
+                    <input type="text" [(ngModel)]="departObj.deptName" name="deptName" class="form-control">
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Department Logo</label>
+                    <input type="text" [(ngModel)]="departObj.deptLogo" name="deptLogo" class="form-control">
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-success" type="submit" (click)="onSubmit()">Save</button>
+                </div> 
+
+            </form>
+        </div>
+    </div>
+</div>

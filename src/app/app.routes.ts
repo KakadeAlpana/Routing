@@ -11,6 +11,13 @@ import { NgStyleComponent } from '../components/directive/attributedirective/ng-
 import { ControlFlowComponent } from '../components/control-flow/control-flow.component';
 import { ElseIfComponent } from '../components/control-flow/else-if/else-if.component';
 import { ForSwitchControlComponent } from '../components/control-flow/for-switch-control/for-switch-control.component';
+import { PipeComponent } from '../components/pipe/pipe.component';
+import { FormComponentComponent } from '../components/form-component/form-component.component';
+import { TemplateFormComponent } from '../components/form-component/template-form/template-form.component';
+import { ReactiveFormComponent } from '../components/form-component/reactive-form/reactive-form.component';
+import { GetApiComponent } from '../components/apiintergration/get-api/get-api.component';
+import { PostApiComponent } from '../components/apiintergration/post-api/post-api.component';
+import { ApiGetPostComponent } from '../components/api-get-post/api-get-post.component';
 
 export const routes: Routes = [
     {
@@ -71,7 +78,36 @@ export const routes: Routes = [
 
         ]
     },
-
+    {
+        path:'pipe',
+        component:PipeComponent
+    },
+    {
+        path:'formcomp',
+        component:FormComponentComponent,
+        children:[
+            {
+             path:'templateForm',
+             component:TemplateFormComponent   
+            },
+            {
+                path:'reactiveForm',
+                component:ReactiveFormComponent
+            },
+        ]
+    },
+    {
+        path:'getapi',
+        component:GetApiComponent
+    },
+    {
+        path:'postapi',
+        component:PostApiComponent
+    },
+     {
+        path:'getPostApi',
+        component:ApiGetPostComponent
+    },
     { path: '', redirectTo: 'admin', pathMatch: 'full' },
 
 ];

@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-4">
+        <div class="btn btn-success" (click)="getAllUsers()">Get data</div>
+    </div>
+    <div class="col-8">
+        <div *ngIf="userList.length > 0" class="table tablebordered">
+            <thead>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Name</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let item of userList">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                </tr>
+            </tbody>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4">
+        <div class="btn btn-success" (click)="getAllEmployee()">Get customers</div>
+
+    </div>
+    <div class="col-8">
+        <div *ngIf="employeeList.length > 0" class="table tablebordered">
+            <thead>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>city</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let item of employeeList">
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.joiningDate}}</td>
+                    <td>{{item.city}}</td>
+                </tr>
+            </tbody>
+        </div>
+    </div>
+</div>

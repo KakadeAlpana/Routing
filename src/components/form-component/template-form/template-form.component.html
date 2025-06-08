@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-6 offset-md-3">
+        <form class="row g-3 formstyle mt-3" #form="ngForm">
+            <div class="col-md-4">
+                <label class="form-label">First name</label>
+                <input type="text" class="form-control" #fName="ngModel" name="firstName" [(ngModel)]="studentObj.firstName" required minlength="3">
+              
+                <div class="text-danger">
+                    @if ((fName.touched || fName.dirty) && fName.errors?.['required']){
+                      <span >This field required</span>
+                    } @else if ((fName.touched || fName.dirty) && fName.errors?.['minlength']) {
+                        <span>This min 3 char required</span>
+                    }
+              </div>
+            </div>
+
+            <div class="col-md-4">
+                <label class="form-label">Last name</label>
+                <input type="text" class="form-control" #lName="ngModel" name="lastName" [(ngModel)]="studentObj.lastName"  required minlength="3">
+                <div class="text-danger">
+                    @if((lName.touched || lName.dirty) && lName.errors?.['required']){
+                        <span>This is required</span>
+                    } @else if ((lName.touched || lName.dirty) && lName.errors?.['minlength']) {
+                        <span> Min 3 char required</span>
+                    }
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Username</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" ></span>
+                    <input type="text" class="form-control"  #userName="ngModel"  name="userName" [(ngModel)]="studentObj.userName"  required minlength="4">
+                </div>
+                 <div class="text-danger">
+                        @if ((userName.touched || userName.dirty) && userName.errors?.['required']) {
+                            <span> This is required</span>
+                        } @else if ((userName.touched || userName.dirty) && userName.errors?.['minlength']) {
+                            <span>Min 4 char required</span>
+                        }
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">City</label>
+                <input type="text"  name="city" #city=ngModel   [(ngModel)]="studentObj.city" class="form-control" required>
+                <div class="text-danger">
+                    @if ((city.touched || city.dirty) && city.errors?.['required']) {
+                        <span>This is required</span>
+                    }
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom04" class="form-label">State</label>
+                <select class="form-select" name="state" [(ngModel)]="studentObj.state"  required>
+                    <option selected disabled value="">Choose...</option>
+                    <option>Mahatrastra</option>
+                    <option>Goa</option>
+                    <option>Dehli</option>
+                    <option>Punjab</option>
+                    <option>KA</option>
+                </select>
+
+                <div class="text-danger">
+                     @if ((city.touched || city.dirty) && city.errors?.['required']) {
+                        <span>This is required</span>
+                    }
+                </div>
+               
+            </div>
+            <div class="col-md-3">
+                <label for="validationCustom05" class="form-label">Zip</label>
+                <input type="text"  name="ZipCode" #zipcode="ngModel" [(ngModel)]="studentObj.ZipCode" class="form-control" required>
+
+                <div class="text-danger">
+                    @if ((zipcode.touched || zipcode.dirty) && zipcode.errors?.['required']) {
+                        <span>This is required</span>
+                    }
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox"  name="isAcceptTerm" #isAcceptTerm="ngModel" [(ngModel)]="studentObj.isAcceptTerm" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                    <div class="text-danger">
+                    @if ((isAcceptTerm.touched || isAcceptTerm.dirty) && isAcceptTerm.errors?.['required']) {
+                        <span>This is required</span>
+                    }
+                </div>
+                </div>
+            </div>
+            <div class="col-12 d-flex ">
+                <button class="btn btn-primary" type="submit" (click)="onSubmit()" [disabled]="form.invalid">Submit form</button>
+                <button class="btn btn-primary mx-3" type="submit" (click)="onReset()">Reset form</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-3">
+        <h4>UpperCAse</h4>
+        <p> {{firstName | uppercase}}</p>
+    </div>
+    <div class="col-3">
+        <h4>Lowercase</h4>
+        <p>{{firstName | lowercase}} </p>
+    </div>
+    <div class="col-3">
+        <h4>TitleCase</h4>
+        <p>{{firstName | titlecase}}</p>
+    </div>
+
+</div>
+<div class="row mt-4">
+    <div class="col-3">
+        <h4>Date</h4>
+        <p>{{currentDate }}</p>
+        <p>{{currentDate | date }}</p>
+    </div>
+    <div class="col-3">
+        <h4>DateFormate</h4>
+        <p>original Data :{{currentDate}}</p>
+        <p>result : {{currentDate | date:'dd-mm-yy'}}</p>
+    </div>
+   <div class="col-3">
+        <h4>DateFormate</h4>
+        <p>original Data :{{currentDate}}</p>
+        <p>result : {{currentDate | date:'dd-mm-yyyy'}}</p>
+    </div>
+    <div class="col-3">
+        <h4>DateFormate</h4>
+        <p>original Data :{{currentDate}}</p>
+        <p>result : {{currentDate | date:'dd-MMM-yyyy'}}</p>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-3">
+         <h4>Json Pipe</h4>
+        <p>original :{{student}}</p>
+        <p>{{student | json}}</p>
+    </div>
+    <div class="col-3">
+         <h4>Asyn Pipe</h4>
+        <p>original :{{currentTime}}</p>
+        <p>{{currentTime | async | date:'hh-mm-ss'}}</p>
+    </div>
+    <div class="col-3">
+        <h4>Custom Pipe</h4>
+        <p>original value : {{student.state}}</p>
+        <p>result value : {{student.state | na}}</p>
+    </div>
+    <div class="col-3"></div>
+</div>
