@@ -10,4 +10,6 @@ import { Component,Input } from '@angular/core';
 export class AlertComponent {
  @Input() message:string ='';
  @Input() alterType :string ='';
+
+ alertMode :string='Alter Data Send'
 }
