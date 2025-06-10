@@ -20,6 +20,7 @@ import { PostApiComponent } from '../components/apiintergration/post-api/post-ap
 import { ApiGetPostComponent } from '../components/api-get-post/api-get-post.component';
 import { NgTempateComponent } from '../components/ng-tempate/ng-tempate.component';
 import { NgContainerComponent } from '../components/ng-container/ng-container.component';
+import { ViewChildComponent } from '../components/view-child/view-child.component';
 
 export const routes: Routes = [
     {
@@ -117,6 +118,10 @@ export const routes: Routes = [
     {
         path:'ngContainer',
         component:NgContainerComponent
+    },
+     {
+        path:'viewChild',
+        component:ViewChildComponent
     },
     { path: '', redirectTo: 'admin', pathMatch: 'full' },
 
