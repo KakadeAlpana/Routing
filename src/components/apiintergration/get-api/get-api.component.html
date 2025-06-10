@@ -1,6 +1,8 @@
+<app-alert [alterType]="'Success'" [message]="' Welcome Message from parent component'"></app-alert>
 <div class="row">
     <div class="col-4">
-        <div class="btn btn-success" (click)="getAllUsers()">Get data</div>
+        <!-- <div class="btn btn-success" (click)="getAllUsers()">Get data</div> -->
+         <app-button-comp [btnClass]="'btn btn-primary'" [btnText]="'get data'" (btnClick)="getAllUsers()"></app-button-comp>
     </div>
     <div class="col-8">
         <div *ngIf="userList.length > 0" class="table tablebordered">
@@ -23,7 +25,8 @@
 </div>
 <div class="row">
     <div class="col-4">
-        <div class="btn btn-success" (click)="getAllEmployee()">Get customers</div>
+        <!-- <div class="btn btn-success" (click)="getAllEmployee()">Get customers</div> -->
+        <app-button-comp [btnClass]="'btn btn-success'" [btnText]="'get all Empolyee'" (btnClick)="getAllEmployee()"></app-button-comp>
 
     </div>
     <div class="col-8">

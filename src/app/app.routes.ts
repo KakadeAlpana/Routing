@@ -18,6 +18,8 @@ import { ReactiveFormComponent } from '../components/form-component/reactive-for
 import { GetApiComponent } from '../components/apiintergration/get-api/get-api.component';
 import { PostApiComponent } from '../components/apiintergration/post-api/post-api.component';
 import { ApiGetPostComponent } from '../components/api-get-post/api-get-post.component';
+import { NgTempateComponent } from '../components/ng-tempate/ng-tempate.component';
+import { NgContainerComponent } from '../components/ng-container/ng-container.component';
 
 export const routes: Routes = [
     {
@@ -107,6 +109,14 @@ export const routes: Routes = [
      {
         path:'getPostApi',
         component:ApiGetPostComponent
+    },
+    {
+        path:'ngTempate',
+        component:NgTempateComponent
+    },
+    {
+        path:'ngContainer',
+        component:NgContainerComponent
     },
     { path: '', redirectTo: 'admin', pathMatch: 'full' },
 

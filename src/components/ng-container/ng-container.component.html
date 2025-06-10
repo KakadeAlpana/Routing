@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-2 offset-2">
+        <button class="btn btn-success" (click)="getUser()"> Get Users</button>
+    </div>
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <ng-container *ngIf="isAPi">
+                    <tr>
+                        <td colspan="3" class="text-center">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-danger" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-light" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-dark" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        </td>
+                    </tr>
+                </ng-container>
+                <ng-container *ngIf="!isAPi">
+                    <tr *ngFor="let item of userList; let index;">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.email}}</td>
+                    </tr>
+                </ng-container>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row">
+      <div class="col-6 offset-6">
+        <ng-container *ngTemplateOutlet="mgTeam">
+        </ng-container>
+
+    </div>
+</div>
+
+<ng-template #mgTeam>
+    <p class="text-success"> Hello I am from ng Tempate</p>
+</ng-template>
