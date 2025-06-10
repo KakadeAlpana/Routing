@@ -3,10 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Department } from '../../../otherservice/interface/department';
+import { AlertComponent } from "../../reusableComponent/alert/alert.component";
 
 @Component({
   selector: 'app-post-api',
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule, AlertComponent],
   templateUrl: './post-api.component.html',
   styleUrl: './post-api.component.css'
 })
