@@ -19,4 +19,8 @@ export class GetapiCallService {
   getLoginUsers(){
     return this.http.get(this.apiUrl + 'login')
   }
+
+//   login(data: any) {
+//   return this.http.post('http://localhost:4000/login', data);
+// }
 }
