@@ -21,13 +21,26 @@ import { ApiGetPostComponent } from '../components/api-get-post/api-get-post.com
 import { NgTempateComponent } from '../components/ng-tempate/ng-tempate.component';
 import { NgContainerComponent } from '../components/ng-container/ng-container.component';
 import { ViewChildComponent } from '../components/view-child/view-child.component';
+import { LoginComponent } from '../components/login/login/login.component';
+import { DashboardComponent } from '../components/login/dashboard/dashboard.component';
+import { LayoutComponent } from '../components/layout/layout.component';
+import { authGuard } from '../otherservice/services/auth.guard';
 
 export const routes: Routes = [
     {
-        path: "admin",
-        component: AdminComponent
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
     },
     {
+        path: 'login',
+        component: LoginComponent,
+    },
+      {
+        path: '',
+        component: LayoutComponent,
+        children:[
+             {
         path: "data-binding",
         component: DataBindingComponent
     },
@@ -38,7 +51,7 @@ export const routes: Routes = [
             {
                 path: "structuralDir",
                 component: StructuraldirectiveComponent,
-                 children: [
+                children: [
                     {
                         path: "ng-for",
                         component: NgForComponent
@@ -50,11 +63,11 @@ export const routes: Routes = [
 
                 ]
             },
-             {
+            {
                 path: "attributeDir",
                 component: AttributeDirectiveComponent,
-                children:[
-                   {
+                children: [
+                    {
                         path: "ng-class",
                         component: NgClassComponent
                     },
@@ -69,60 +82,84 @@ export const routes: Routes = [
     {
         path: "controlFlow",
         component: ControlFlowComponent,
-        children:[
+        children: [
             {
-                path:'elseIf',
-                component:ElseIfComponent
+                path: 'elseIf',
+                component: ElseIfComponent
             },
-             {
-                path:'forswitch',
-                component:ForSwitchControlComponent
+            {
+                path: 'forswitch',
+                component: ForSwitchControlComponent
             }
 
         ]
     },
     {
-        path:'pipe',
-        component:PipeComponent
+        path: 'pipe',
+        component: PipeComponent,
+        canActivate:[authGuard]
     },
     {
-        path:'formcomp',
-        component:FormComponentComponent,
-        children:[
+        path: 'formcomp',
+        component: FormComponentComponent,
+        children: [
             {
-             path:'templateForm',
-             component:TemplateFormComponent   
+                path: 'templateForm',
+                component: TemplateFormComponent
             },
             {
-                path:'reactiveForm',
-                component:ReactiveFormComponent
+                path: 'reactiveForm',
+                component: ReactiveFormComponent
             },
         ]
     },
     {
-        path:'getapi',
-        component:GetApiComponent
+        path: 'getapi',
+        component: GetApiComponent
     },
     {
-        path:'postapi',
-        component:PostApiComponent
-    },
-     {
-        path:'getPostApi',
-        component:ApiGetPostComponent
+        path: 'postapi',
+        component: PostApiComponent
     },
     {
-        path:'ngTempate',
-        component:NgTempateComponent
+        path: 'getPostApi',
+        component: ApiGetPostComponent
     },
     {
-        path:'ngContainer',
-        component:NgContainerComponent
+        path: 'ngTempate',
+        component: NgTempateComponent
     },
-     {
-        path:'viewChild',
-        component:ViewChildComponent
+    {
+        path: 'ngContainer',
+        component: NgContainerComponent
     },
+    {
+        path: 'viewChild',
+        component: ViewChildComponent
+    },
+
+        ]
+    },
+    {
+        path: 'dashboard',
+        component: DashboardComponent
+    },
+    {
+        path: "admin",
+        component: AdminComponent
+    },
+
+   
+
+    //  {
+    //     path:'',
+    //     component:LoginComponent,
+    //     children:[
+    //         { path:'dashboard',
+    //           component:DashboardComponent
+    //         },
+    //     ]
+    // },
     { path: '', redirectTo: 'admin', pathMatch: 'full' },
 
 ];
