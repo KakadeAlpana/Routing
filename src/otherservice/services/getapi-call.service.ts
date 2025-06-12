@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Constant } from '../../app/constant/constant';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class GetapiCallService {
   }
 
   getAllUSers(){
-    return this.http.get('https://jsonplaceholder.typicode.com/users')
+    return this.http.get(Constant.API_URL + '/users')
   }
 
   getLoginUsers(){

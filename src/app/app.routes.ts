@@ -25,6 +25,7 @@ import { LoginComponent } from '../components/login/login/login.component';
 import { DashboardComponent } from '../components/login/dashboard/dashboard.component';
 import { LayoutComponent } from '../components/layout/layout.component';
 import { authGuard } from '../otherservice/services/auth.guard';
+import { SignalComponent } from '../components/signal/signal.component';
 
 export const routes: Routes = [
     {
@@ -137,6 +138,10 @@ export const routes: Routes = [
         path: 'viewChild',
         component: ViewChildComponent
     },
+    {
+        path:'signal',
+        component:SignalComponent
+    }
 
         ]
     },
