@@ -1,0 +1,43 @@
+<div class="conatiner p-3">
+    <div class="row my-2">
+        <div class="col-4">
+              <h3 class="text-danger">Signal Changing vlaue on buton</h3>
+            {{firstName()}}
+            {{rollNo()}}
+            <button class="btn btn-success" (click)="onChangeValue()">Change Signal Value</button>
+        </div>
+       
+        <div class="col-4">
+            <h3 class="text-danger">Changing Value with setTimeout</h3>
+            {{lastName()}}
+        </div>
+        <div class="col-4">
+              <h3 class="text-danger">Changing Value with setTimeout and using simple arible not a signal</h3>
+            {{middleName}}
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-4">
+        <h3 class="text-danger">Computed Concept</h3>
+
+            {{fullNewVlaue()}}
+            <br>
+            <button class="btn btn-success" (click)="changeFirstVaribaleValue()">firstVal</button>
+            <button class="btn btn-success" (click)="changesecondVaribaleValue()">SecondVal</button>
+
+        </div>
+        <div class="col-4">
+            <h3  class="text-danger"> Array Data with signal</h3>
+            {{CityList()}}
+            <br>
+            <button class="btn btn-success" (click)="addCityName()">Add city</button>
+        </div>
+        <div class="col-4">
+<h3  class="text-danger"> Object Data with signal</h3>
+            {{studentObj().name}}-{{studentObj().age}}-{{studentObj().city}}
+            <button class="btn btn-success" (click)="changeCity()">change City</button>
+        </div>
+       
+    </div>
+</div>

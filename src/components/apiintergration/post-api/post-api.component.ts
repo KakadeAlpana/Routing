@@ -4,6 +4,7 @@ import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Department } from '../../../otherservice/interface/department';
 import { AlertComponent } from "../../reusableComponent/alert/alert.component";
+import { Idepartment } from '../../../model/interface/Idepartment';
 
 @Component({
   selector: 'app-post-api',
@@ -15,10 +16,10 @@ export class PostApiComponent  {
 
   http = inject(HttpClient)
 
-  deptData :Department[]=[];
+  deptData :Idepartment[]=[];
 
-departObj :Department={
-  id: '',
+departObj :Idepartment={
+  id:0,
   deptName: "",
   deptLogo: ""
 }

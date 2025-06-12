@@ -2,6 +2,7 @@ import { CommonModule, JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Customer } from '../../model/class/class';
 
 @Component({
   selector: 'app-api-get-post',
@@ -15,12 +16,13 @@ export class ApiGetPostComponent implements OnInit {
   http = inject(HttpClient)
 
 
-  departObj: any = {
-    departmentId:'',
-    departmentName: "",
-    departmentLogo: ""
+  departObj: Customer={
+    departmentId: 0,
+  departmentName: '',
+  departmentLogo: ''
   }
-  deptData: any[] = [];
+ 
+  deptData: Customer[] = [];
 
 ngOnInit(): void {
   const stored = localStorage.getItem('departments');
