@@ -1,14 +1,14 @@
 <nav class="navbar navbar-expand-lg bg-dark ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="admin">Admin</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" routerLink="data-binding">Data Binding</a>
         </li>
@@ -45,10 +45,18 @@
          <li class="nav-item">
           <a class="nav-link" routerLink="signal">Signal</a>
         </li>
+         <li class="nav-item">
+          <a class="nav-link" routerLink="subjectAndBehSub">Subject/Beh.Sub</a>
+        </li>
       </ul>
       <form class="d-flex" role="search">
         <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/> -->
         <!-- <button class="btn btn-outline-danger" type="submit" routerLink="login">Login</button> -->
+        <select class="form-select" [(ngModel)]="userRole" (ngModelChange)="roleChange($event)" name="userRole">
+          <option>Admin</option>
+          <option>Devloper</option>
+          <option>Backend</option>
+        </select>
         <p class="text-white mr-2">{{loggedUserData}}</p>
         <button class="btn btn-outline-danger" type="submit"(click)="onLogout()">logout</button>
       </form>

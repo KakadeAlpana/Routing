@@ -24,7 +24,7 @@ export class DataBindingComponent implements OnInit{
   personalName = signal("Alpana Pawar")
  
   constructor(private router : Router){
-
+   
   }
   ngOnInit(): void {
    

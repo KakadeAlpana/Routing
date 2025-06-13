@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { GetapiCallService } from '../../otherservice/services/getapi-call.service';
 
 @Component({
   selector: 'app-signal',
@@ -32,13 +33,23 @@ studentObj=signal({
   city:'Pune'
 })
 
- constructor(){
+// 
+currentRole:string ='';
+
+
+ constructor(private getapiSer:GetapiCallService){
   const fname = this.firstName()
   setTimeout(()=> {
     // debugger;s
     this.lastName.set("this new value changing after few sec");
     this.middleName= "this is new vlaue of few sec and used change detecion(alue will not update on UI)"
   }, 9000)
+
+  // for subject
+   this.getapiSer.RoleChange$.subscribe((role:string)=>{
+    this.currentRole = role
+      console.log(role)
+    })
  }
 
  onChangeValue(){

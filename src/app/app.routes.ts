@@ -26,6 +26,7 @@ import { DashboardComponent } from '../components/login/dashboard/dashboard.comp
 import { LayoutComponent } from '../components/layout/layout.component';
 import { authGuard } from '../otherservice/services/auth.guard';
 import { SignalComponent } from '../components/signal/signal.component';
+import { SubjectAndBehSubComponent } from '../components/subject-and-beh-sub/subject-and-beh-sub.component';
 
 export const routes: Routes = [
     {
@@ -141,7 +142,11 @@ export const routes: Routes = [
     {
         path:'signal',
         component:SignalComponent
-    }
+    },
+    {
+        path: "subjectAndBehSub",
+        component: SubjectAndBehSubComponent
+    },
 
         ]
     },

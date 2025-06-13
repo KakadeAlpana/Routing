@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { interval, map, Observable } from 'rxjs';
 import { NaPipe } from '../../otherservice/custompipe/na.pipe';
 import { state } from '@angular/animations';
+import { GetapiCallService } from '../../otherservice/services/getapi-call.service';
 
 @Component({
   selector: 'app-pipe',
@@ -22,10 +23,15 @@ export class PipeComponent {
     state :'Mh'
   }
 
+  currentRole:string =''
   currentTime :Observable<Date> =new Observable<Date>
 
 
-  constructor(){
+  constructor(private getapiSer:GetapiCallService){
     this.currentTime = interval(1000).pipe(map(()=> new Date() ));
-  }
+    // 
+this.getapiSer.NewRole$.subscribe((role:string)=>{
+    this.currentRole = role
+      console.log(role)
+    })  }
 }
